@@ -1,11 +1,14 @@
+---
 
+tags: ["vision"]
+---
 
 # What is computer vision
 
 
 Computer vision is the field that studies how raw data representation of the world ( like camera and sensor input ) can be interpreted. A process that for humans is natural and simple.
 
-This is a necessity, enormous ammount of human knowledge and decision-making depends on visual input, and we might want machines operating in that visual world, which requires them to actually "understand" it.
+This is a necessity, enormous amount of human knowledge and decision-making depends on visual input, and we might want machines operating in that visual world, which requires them to actually "understand" it.
 or *Deep learning*.
 
 ## History

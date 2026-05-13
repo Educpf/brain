@@ -1,6 +1,9 @@
 ---
-title: Welcome to Quartz
+title: Welcome to my mind
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+I felt the need to have a single place where I could store my knowledge and this seems like a nice way to do it.
+
+Heavily inspired by ---. 
+
+Since these are my personal annotations, take everything with a grain of salt ;)

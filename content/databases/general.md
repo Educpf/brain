@@ -1,7 +1,7 @@
 ---
 title: "Databases"
 tags: ["database"]
-draft: true
+draft: false
 ---
 
 # Server(less) database
