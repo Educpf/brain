@@ -1,5 +1,5 @@
 
-We saw before in **REFERENCE** how we can divide a text into tokens and in **REFERNECE** how to represent a text considering the appearance of those tokens.
+We saw before in [[preprocessing]] how we can divide a text into tokens and in [[text-classification]] how to represent a text considering the appearance of those tokens.
 Now we will explore how those representation might be missing something and what other ways we can represent a document.
 
 # How to represent words?
@@ -36,7 +36,7 @@ Many techniques were used for text representation, all following this idea.
 # Sparse Vectors
 
 
-As we saw before, in **REFERNECE**, we can use TF-IDF as replacement for simple counts.
+As we saw before, in [[text-classification]], we can use TF-IDF as replacement for simple counts.
 
 ## Document
 With this we can create a **Term-Document Matrix**, where each row is a vector that describes the word, and each column a vector that describes the document.
