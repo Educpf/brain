@@ -1,6 +1,6 @@
 ---
-
 tags: ["vision"]
+draft: true
 ---
 
 # What is computer vision
