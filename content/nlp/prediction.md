@@ -39,7 +39,7 @@ To get the probability of a **sentence**, multiply sequentially the probability 
 
 Probabilities are small and multiplying them together gives even smaller numbers, which for computers is a problem. One can add in log space, which is equivalent to multiplying in linear space:
 
-**p1 x p2 x p3 = exp(log(p1) + log(p2) + log(p3))**
+**p1 x p2 x p3 = exp(log(p1 x p2 x p3)) = exp(log(p1) + log(p2) + log(p3))**
 
 # Evaluating Language Models
 
@@ -49,6 +49,7 @@ There are two main types of evaluations:
 - Direct evaluation on the same type of data
 - No external tasks
 - Measure likelihood probability of phrases
+
 **Extrinsic evaluation**
 - Embedded in complex systems ( translation, classification, speech recognition etc...)
 - Check if adding new models improves or not

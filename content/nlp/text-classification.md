@@ -33,6 +33,20 @@ Just count how many times each word appeared in the document, ignoring their ord
 *"I love this movie, I really love it"*
 **{I: 2, love: 2, this: 1, movie: 1, really: 1, it: 1}**
 
+### TF-IDF ( Term Frequency-Inverse Document Frequency)
+
+Imagine a word that appears in all documents, it stops giving us information about it. That's what TF-IDF does, tries to ignore words like ***the, and...***, giving an **high** score to words that appear often in a specific document **high TF**, but appear in relative few documents **high IDF**
+
+$$
+TF(t,d)=
+\frac{Number\ of\ times\ term\ t\ appears\ in\ document\ d}{Total\ number\ of\ words\ in\ d}
+$$
+$$
+	​IDF(t)=log(\frac{N}{df(t)}​) \\
+    df(t) = number\ of\ documents\ with\ f
+$$
+
+
 ### Binary NB
 
 Instead of counting how many times a word appears ( frequency ), simply note whether it appears or not. (Often better for sentiment analysis)

@@ -42,15 +42,16 @@ As we saw before, in [[text-classification]], we can use TF-IDF as replacement f
 With this we can create a **Term-Document Matrix**, where each row is a vector that describes the word, and each column a vector that describes the document.
 
 Considering the **distributional hypothesis** described before, we can already obtain some information. Similar documents tend to have similar words, and similar words tend to appear in similar documents.
-![Document Matrix](images/doc_matrix.png)
-![Word Vector](images/word_vec.png)
+
+![[images/doc_matrix.png]]
+![[images/word_vec.png]]
 
 ## Context
 
 For better understanding the relationship between words we can analyze the context(surrounding) words of a specific **target** counting how many times each word appears in that context.
 Two words are **very similar** if their **context vectors are similar**
 
-![Context Matrix](images/context_matrix.png)
+![[images/context_matrix.png]]
 
 
 Now that each word is defined by a vector we can measure the similarity between them by calculating the **dot product**. 
@@ -71,7 +72,7 @@ Introduced by Mikolov, uses raw text for a self-supervised classification proble
 
 The end goal is not the prediction task, we want to then use the learned **classifier weights** as the **word embeddings**.
 
-![Skip-Gram](images/skip-gram.png)
+![[images/skip-gram.png]]
 
 ### Negative Sampling
 
@@ -94,7 +95,7 @@ Basically, the steps change to this:
 
 ### Size of context window
 
-**Smaller windows** lead to more **syntactic representations**: semantically similar words tend to have the same POS
+**Smaller windows** lead to more **syntactic representations**: semantically similar words tend to have the same POS (part of speech)
 **Wider windows** lead to topically **related**, not necessarily **similar**
 
 ### Analogy
@@ -107,3 +108,13 @@ Paris - France + Italy = Rome
 ### Bias
 
 Naturally embeddings learn and reproduce the **implicit biases and stereotypes** that are latent in the text.
+
+# Evaluation
+
+Recall [[prediction#Evaluating Language Models]]:
+
+**Intrinsic**: compare embeddings scores with human ratings.
+- Words without context **wordSim-353**|**SimLex-999**...
+- Words with context.
+
+**Extrinsic**: check improvements when used in NLP tasks
