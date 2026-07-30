@@ -1,5 +1,5 @@
 ---
-title: "Display server protocols"
+title: "Linux Maintenance"
 tags: ["linux", "pacman"]
 draft: false
 ---
