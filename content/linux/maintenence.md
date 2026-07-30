@@ -1,7 +1,7 @@
 ---
 title: "Display server protocols"
 tags: ["linux", "pacman"]
-draft: true
+draft: false
 ---
 
 
