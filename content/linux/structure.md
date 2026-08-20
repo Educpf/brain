@@ -12,21 +12,22 @@ I've been using linux for a while, but with all the copy-paste tutorials there i
 
 The first step is to understand at an high level what each top-level directory is for.
 
-| Directory      | Purpose                                              |
-| -------------- | ---------------------------------------------------- |
-| /              | Root of the file system                              |
-| /bin           | Essential command binaries for **all users**         |
-| /sbin          | System binaries for admin tasks (fsck, ifconfig)     |
-| /usr           | User program and data. Can be shared across systems  |
-| /var           | Variable data files ( logs, databases, mail spools ) |
-| /etc           | System-wide configuration files                           |
-| /home          | User's home directories                              |
-| /tmp           | Temporary files                                      |
-| /dev           | Device files ( interface to hardware )               |
-| /proc          | Virtual filesystem for kernel and process info       |
-| /lib or /lib64 | Shared libraries                                     |
-| /opt           | Optional/add-on software                             |
-| /mnt or /media | Mount points for external storage                    |
+| Directory      | Purpose                                                                       |
+| -------------- | ----------------------------------------------------------------------------- |
+| /              | Root of the file system                                                       |
+| /bin           | Essential command binaries for **all users**                                  |
+| /sbin          | System binaries for admin tasks (fsck, ifconfig)                              |
+| /usr           | User program and data. Can be shared across systems                           |
+| /var           | Variable data files ( logs, databases, mail spools )                          |
+| /etc           | System-wide configuration files                                               |
+| /home          | User's home directories                                                       |
+| /tmp           | Temporary files                                                               |
+| /dev           | Device files ( interface to hardware )                                        |
+| /proc          | Virtual filesystem for kernel and process info                                |
+| /lib or /lib64 | Shared libraries                                                              |
+| /opt           | Optional/add-on software                                                      |
+| /mnt or /media | Mount points for external storage                                             |
+| /sys           | Virtual Filesystem to expose information and controls for kernel and hardware |
 
 ## How to practice
 
@@ -73,8 +74,51 @@ Programs read files in `/etc` at startup to learn:
 |                 |                                                         |
 
 
+# 3. sys
+
+All the files in here are not really stored in the SSD card as in other folders. Instead the kernel's sysfs code generates the values dynamically, directly communicating with the hardware.
+The best way to understand is looking at `/sys` as a kernel object presented as directories and files.
+
+### /devices - hierarchy
+
+Has the information in a structure similar to the real device hierarchy.
+For example, something like this:
+
+```
+computer
+└── PCI bus
+    ├── GPU
+    ├── network controller
+    └── USB controller
+        └── USB device
+            └── keyboard
+```
+
+Can be found as:
+
+```
+/sys/devices/
+└── pci0000:00/
+    ├── 0000:00:02.0/
+    ├── 0000:00:14.0/
+    └── 0000:00:1f.3/
+```
+
+Note that the weird looking `0000:00:02.0` mean roughly *domain : bus : device . function*, and are the *PCI addresses*
+
+### /class - what they do
+
+In here, they are organized by *what they do*, grouping devices by *function*.
+When a program wants, for example, all the network interfaces, it can look into a single place without having to understand the structure.
+
+### /bus - buses
+
+A *Bus* is basically a mechanism through which devices and drivers interact.
+
+### /module - loaded kernel modules
 
 
+...
 
 
 

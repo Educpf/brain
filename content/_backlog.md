@@ -1,7 +1,19 @@
 ---
-
 draft: True
 ---
+
+
+
+
+- [ ] Bios update
+
+
+
+
+
+
+
+
 
 # Real backlog
 
