@@ -35,12 +35,20 @@ Check system logs of the systems, errors and etc...
 ```sh
 journalctl -xfe
 ```
+
+To check specifically the current boot errors
+```sh
+    journalctl -xfe
+```
 # Temporary files
 
 Delete the Trash ( location for deleted files via GUI )
 ```sh
 rm -rf ~/.local/share/Trash/files/*
 ```
+> Might be necessary to check the location
+
+
 System cache ( not recommended to clear )
 ```sh
 du -sh ~/.cache/ # Check its size
